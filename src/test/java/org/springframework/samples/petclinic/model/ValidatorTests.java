@@ -55,13 +55,11 @@ public class ValidatorTests {
 		owner.setLastName("Schultz");
 		owner.setAddress("4, Evans Street");
 		owner.setCity("Wollongong");
-		owner.setTelephone("444zeezt4444");
+		owner.setTelephone("invalidPhoneNumber");
 
 		Validator validator = createValidator();
 		Set<ConstraintViolation<Owner>> constraintViolations = validator
 				.validate(owner);
-
-		System.out.println(constraintViolations);
 
 		assertThat(constraintViolations.size()).isEqualTo(1);
 
